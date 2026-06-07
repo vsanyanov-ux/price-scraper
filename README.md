@@ -34,8 +34,8 @@ graph TD
         S1 -->|Сохранение данных / История| DB1[("scraped_data.json (База Космеи)")]
         S2 -->|Сохранение данных| DB2[("forma_data.json (База Формы)")]
         
-        main["main.py (FastAPI API)"] -->|Чтение и сопоставление (difflib)| DB1
-        main -->|Чтение и сопоставление (difflib)| DB2
+        main["main.py (FastAPI API)"] -->|Чтение и сопоставление через difflib| DB1
+        main -->|Чтение и сопоставление через difflib| DB2
         
         S1 -->|При изменении цен| TG["telegram_utils.py"]
     end
