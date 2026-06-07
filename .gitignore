@@ -1,0 +1,25 @@
+# Python virtual env and cache
+.venv/
+__pycache__/
+*.pyc
+
+# Local databases / scraped data (dynamic files)
+backend/scraped_data.json
+backend/forma_data.json
+
+# Environment variables containing sensitive bot tokens
+.env
+backend/.env
+
+# Node modules and build output
+node_modules/
+dist/
+.eslintcache
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Deploy archives
+deploy.tar.gz
+
