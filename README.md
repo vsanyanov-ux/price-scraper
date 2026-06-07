@@ -22,12 +22,12 @@
 
 ```mermaid
 graph TD
-    subgraph Внешние ресурсы (Websites)
+    subgraph "Внешние ресурсы (Websites)"
         K["Сайт Космея (Конкурент)"]
         F["Сайт Форма (Наш салон)"]
     end
 
-    subgraph Бэкенд (FastAPI)
+    subgraph "Бэкенд (FastAPI)"
         S1["scraper.py (Парсер Космеи)"] -.->|GET-запросы / BeautifulSoup| K
         S2["scraper_forma.py (Парсер Формы)"] -.->|GET-запросы / BeautifulSoup| F
         
@@ -41,11 +41,11 @@ graph TD
         S1 -->|При изменении цен| TG["telegram_utils.py"]
     end
 
-    subgraph Внешние сервисы (Notifications)
+    subgraph "Внешние сервисы (Notifications)"
         TG -->|HTML Alert| TGA["Telegram Bot API"]
     end
 
-    subgraph Фронтенд (React + Vite)
+    subgraph "Фронтенд (React + Vite)"
         App["App.jsx (Дашборд)"] -->|Fetch API Requests| main
         App -->|Рендеринг графиков| RC["Recharts AreaChart"]
         App -->|Скачивание| CSV["CSV Экспорт"]
