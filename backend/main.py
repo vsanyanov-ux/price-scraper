@@ -166,4 +166,5 @@ def get_history() -> Dict[str, List[Dict[str, Any]]]:
 
 if __name__ == "__main__":
     import uvicorn
+    # Trigger uvicorn reload to load new env vars
     uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
