@@ -46,3 +46,15 @@ def format_price_change_message(category: str, title: str, old_price: str, new_p
         f"🔥 <b>Стало:</b> {new_price}\n\n"
         f"🔗 <a href='{url}'>Ссылка на сайт конкурента</a>"
     )
+
+def format_our_price_change_message(category: str, title: str, old_price: str, new_price: str, url: str) -> str:
+    """Форматирует красивое HTML-сообщение об изменении нашей собственной цены."""
+    return (
+        f"📢 <b>Изменение цены в нашем салоне!</b>\n\n"
+        f"<b>Салон:</b> Форма\n"
+        f"<b>Категория:</b> {category}\n"
+        f"<b>Услуга:</b> {title}\n\n"
+        f"📈 <b>Было:</b> {old_price}\n"
+        f"🔥 <b>Стало:</b> {new_price}\n\n"
+        f"🔗 <a href='{url}'>Ссылка на наш сайт</a>"
+    )

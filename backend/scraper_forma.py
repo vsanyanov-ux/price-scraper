@@ -120,6 +120,20 @@ def save_forma_results(new_items):
                 })
                 print(f"📈 [Форма] Изменилась цена: {item['category']} -> {item['title']}: {last_price} -> {price_raw}")
                 
+                # Отправка уведомления в Telegram
+                try:
+                    from telegram_utils import send_telegram_message, format_our_price_change_message
+                    msg = format_our_price_change_message(
+                        category=item['category'],
+                        title=item['title'],
+                        old_price=last_price,
+                        new_price=price_raw,
+                        url=item['url']
+                    )
+                    send_telegram_message(msg)
+                except Exception as tg_err:
+                    print(f"Ошибка отправки Telegram-уведомления [Форма]: {tg_err}")
+                
             updated_db[key] = {
                 **item,
                 "history": history,
